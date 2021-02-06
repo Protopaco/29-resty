@@ -1,5 +1,6 @@
 import React from 'react';
+import RestyFrame from '../RestyFrame/RestyFrame.jsx';
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return <RestyFrame />;
 }
