@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const RestyForm = ({ handleSubmitClick }) => {
     const [urlInput, setUrlInput] = useState('');
@@ -7,6 +7,7 @@ const RestyForm = ({ handleSubmitClick }) => {
 
     const handleClick = (e) => {
         e.preventDefault()
+
         let infoObject = { 'method': methodType }
         if (methodType != 'GET') infoObject[body] = bodyInput;
 
@@ -16,6 +17,16 @@ const RestyForm = ({ handleSubmitClick }) => {
         }
         handleSubmitClick(stateObject)
     }
+
+    const handleMethodChange = (e) => {
+        console.log(e.target.value)
+        e.preventDefault();
+        setMethodType(e.target.value)
+    }
+
+    useEffect(() => {
+
+    }, [methodType])
 
     return (
         <div >
@@ -40,8 +51,8 @@ const RestyForm = ({ handleSubmitClick }) => {
                     id="GET"
                     name="method"
                     value="GET"
-                    onChange={({ target }) => setMethodType(target.value)}
-                    checked
+                    onChange={(e) => handleMethodChange(e)}
+                    required
                 />
                 <label
                     htmlFor="POST">
@@ -52,7 +63,7 @@ const RestyForm = ({ handleSubmitClick }) => {
                     id="POST"
                     name="method"
                     value="POST"
-                    onChange={({ target }) => setMethodType(target.value)}
+                    onChange={(e) => handleMethodChange(e)}
                 />
                 <label
                     htmlFor="PUT">
@@ -63,7 +74,7 @@ const RestyForm = ({ handleSubmitClick }) => {
                     id="PUT"
                     name="method"
                     value="PUT"
-                    onChange={({ target }) => setMethodType(target.value)}
+                    onChange={(e) => handleMethodChange(e)}
                 />
                 <label
                     htmlFor="DELETE">
@@ -74,7 +85,7 @@ const RestyForm = ({ handleSubmitClick }) => {
                     id="DELETE"
                     name="method"
                     value="DELETE"
-                    onChange={({ target }) => setMethodType(target.value)}
+                    onChange={(e) => handleMethodChange(e)}
                 />
                 <br />
                 <label

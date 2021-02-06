@@ -1,29 +1,24 @@
 import React, { Component } from 'react';
 import RestyForm from '../RestyForm/RestyForm.jsx';
 import RestyResponse from '../RestyResponse/RestyResponse.jsx';
+import RestyHistory from '../RestyHistory/RestyHistory.jsx'
 import useFetch from '../../utils/fetch/fetch.js';
 
 export default class RestyFrame extends Component {
     state = {
-        history: [],
-        responseObject: ''
+        responseObject: '',
+        tempHistory: []
     }
 
 
     handleSubmitClick = async (stateObject) => {
-
-        let tempHistory = this.state.history
-        tempHistory.push(stateObject)
-
         const responseObject = await useFetch(stateObject)
-        console.log(responseObject)
+
         await this.setState({
             responseObject,
-            history: tempHistory
+            tempHistory: stateObject
         })
 
-        console.log('GHGHGHGHGHGHGHGHGHGHGHGH')
-        console.log(this.state.responseObject)
     }
 
     render() {
@@ -35,6 +30,7 @@ export default class RestyFrame extends Component {
                 <RestyResponse
                     responseObject={this.state.responseObject}
                 />
+                <RestyHistory tempHistory={this.state.tempHistory} />
 
             </div>
         )

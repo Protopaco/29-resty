@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const RestyResponse = ({ responseObject }) => {
-    const [headers, setHeaders] = useState()
 
-    useEffect(() => {
-        console.log('[][][][][][][][][][][][][][][][][]')
-        console.log(responseObject)
-
-    }, [responseObject])
     return (
         <div>
             {responseObject ?
