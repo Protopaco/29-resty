@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RestyHistory component renders RestyHistory 1`] = `
+<DocumentFragment>
+  <div>
+    <h2>
+      HISTORY
+    </h2>
+    <div
+      class="history"
+    />
+  </div>
+</DocumentFragment>
+`;

@@ -1,0 +1,38 @@
+.formFrame{
+    display: flex;
+    flex-direction: column;
+    background-color: gray;
+    color: white;
+    padding: 15px;
+    width: 1000px;
+}
+
+.urlInput{
+    width: 500px;
+}
+
+.methodButtons{
+    padding: 5px;
+    border: 1px solid lightgray;
+    margin-top: 5px;
+    width: 485px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.radioButton{
+    display:none;
+}
+
+input:checked + label{
+    background: white;
+    color: black;
+    border-radius: 5px;
+}
+
+.radioLabel{
+    padding: 5px;
+    margin-right: 15px
+}
