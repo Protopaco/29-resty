@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RestyResponse component renders RestyResponse 1`] = `
+<DocumentFragment>
+  <div>
+    <h2>
+      Response
+    </h2>
+    <div
+      class="response"
+    >
+      <div>
+        <p
+          data-testid="responseDisplay"
+        >
+          {"greeting":"Hello!"}
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

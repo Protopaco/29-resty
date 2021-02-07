@@ -1,0 +1,10 @@
+.frame{
+    display: flex;
+    flex-direction: column;
+}
+
+.lowerFrame{
+    display: flex;
+}
+
+
