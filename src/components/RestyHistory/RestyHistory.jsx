@@ -5,7 +5,9 @@ const RestyHistory = ({ tempHistory }) => {
 
     useEffect(() => {
         let fullHistory = JSON.parse(localStorage.getItem('history'));
-        fullHistory ? fullHistory.push(tempHistory) : fullHistory = []
+        console.log(fullHistory)
+        console.log(tempHistory)
+        if (fullHistory && tempHistory.url) fullHistory.push(tempHistory)
 
         localStorage.setItem('history', JSON.stringify(fullHistory))
 

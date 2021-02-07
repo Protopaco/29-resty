@@ -10,7 +10,7 @@ const RestyForm = ({ handleSubmitClick }) => {
 
         let infoObject = { 'method': methodType }
         if (methodType != 'GET') infoObject[body] = bodyInput;
-
+        console.log(infoObject.body)
         const stateObject = {
             'url': urlInput,
             infoObject
@@ -19,14 +19,15 @@ const RestyForm = ({ handleSubmitClick }) => {
     }
 
     const handleMethodChange = (e) => {
-        console.log(e.target.value)
         e.preventDefault();
         setMethodType(e.target.value)
     }
 
     useEffect(() => {
+        console.log('hello!')
 
     }, [methodType])
+
 
     return (
         <div >
@@ -35,7 +36,6 @@ const RestyForm = ({ handleSubmitClick }) => {
                     htmlFor="url">
                     URL
                 </label>
-
                 <input
                     id="url"
                     onChange={({ target }) => setUrlInput(target.value)}
@@ -52,8 +52,9 @@ const RestyForm = ({ handleSubmitClick }) => {
                     name="method"
                     value="GET"
                     onChange={(e) => handleMethodChange(e)}
-                    required
+                    checked
                 />
+                <br />
                 <label
                     htmlFor="POST">
                     POST
@@ -65,6 +66,7 @@ const RestyForm = ({ handleSubmitClick }) => {
                     value="POST"
                     onChange={(e) => handleMethodChange(e)}
                 />
+                <br />
                 <label
                     htmlFor="PUT">
                     PUT
@@ -76,6 +78,7 @@ const RestyForm = ({ handleSubmitClick }) => {
                     value="PUT"
                     onChange={(e) => handleMethodChange(e)}
                 />
+                <br />
                 <label
                     htmlFor="DELETE">
                     DELETE
